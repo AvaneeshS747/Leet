@@ -1,0 +1,13 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        st=str(x)
+        if st[0]=="-":
+            rev=-int(st[:0:-1])
+        else:
+            rev=int(st[::-1])
+        if rev >= 2**31-1 or rev <= -2**31: return 0
+        else : return rev
+            
+            
+        
+        
