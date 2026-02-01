@@ -1,0 +1,17 @@
+class Solution:
+    def dominantIndex(self, nums: List[int]) -> int:
+        lar=0
+        sl=0
+        ind=0
+        for i,val in enumerate(nums):
+            if (val>lar) :
+                sl=lar
+                lar=val
+                ind=i
+            elif (val>sl):
+                sl=val
+        if ((sl*2 )<= lar):
+            return ind
+        else:
+            return -1
+                
