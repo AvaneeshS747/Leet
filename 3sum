@@ -1,1 +1,24 @@
-on work
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        n=len(nums)
+        l=[]
+        f=[]
+        if 3<=n<=3000:
+            for i in range(n-2):
+                for j in range(i,n-1):
+                    for k in range(j,n):
+                        if nums[i]+nums[j]+nums[k]==0 and i!=j and j!=k and i!=k:
+                            x=[nums[i],nums[j],nums[k]]   
+                            if x[0] > x[1]:
+                                x[0], x[1] = x[1], x[0]
+
+                            if x[1] > x[2]:
+                                x[1], x[2] = x[2], x[1]
+
+                            if x[0] > x[1]:
+                                x[0], x[1] = x[1], x[0]
+                            if x in l:
+                                continue
+                            else:
+                                l.append(x)
+        return l
