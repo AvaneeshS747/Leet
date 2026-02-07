@@ -1,0 +1,14 @@
+class Solution:
+    def isValid(self, k: str) -> bool:
+        s=[]
+        pairs={')':'(',']':'[','}':'{'}
+        for i in k:
+            if i in pairs.values():
+                s.append(i)
+            else:
+                if not s:
+                    return False
+                if s[-1]!=pairs[i]:
+                    return False
+                s.pop()
+        return len(s)==0
