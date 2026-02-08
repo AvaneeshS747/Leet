@@ -1,0 +1,16 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        k=[]*len(s)
+        for i in s:
+            k.append(i)
+        if len(k)!=len(t):
+            return False
+        for i in t:
+            if i in k:
+                k.remove(i)
+                
+        if k==[]:
+            return True
+        else:
+            return False
+        
