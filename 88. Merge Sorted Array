@@ -14,8 +14,7 @@ class Solution:
                 nums1[i] = nums1[i + 1]
                 nums1[i + 1] = temp
                 i = -1
-            i += 1
-        
+            i +=1
         
 
     
