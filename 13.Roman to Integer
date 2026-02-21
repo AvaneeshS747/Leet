@@ -1,0 +1,18 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        ch={'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+        num=0
+        for i in range (len(s)-1):
+            if ch[s[i]]>ch[s[i-1]] and i!=0:
+                continue
+            if ch[s[i]]>=ch[s[i+1]]:
+                x=ch[s[i]]
+                num=num+x
+            else:
+                x=ch[s[i+1]]-ch[s[i]]
+                num=num+x
+        if ch[s[len(s)-1]]<=ch[s[len(s)-2]]:
+            x=ch[s[len(s)-1]]
+            num=num+x
+            
+        return num
