@@ -1,0 +1,9 @@
+class Solution:
+    def minPartitions(self, n: str) -> int:
+        if (1<=len(n)<=(10)**5):
+            maxi="0"
+            for i in n:
+                if i > maxi:
+                    maxi=i
+        return int(maxi)
+        
