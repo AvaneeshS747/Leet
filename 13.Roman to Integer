@@ -14,5 +14,4 @@ class Solution:
         if ch[s[len(s)-1]]<=ch[s[len(s)-2]]:
             x=ch[s[len(s)-1]]
             num=num+x
-            
         return num
